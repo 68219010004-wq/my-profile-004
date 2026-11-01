@@ -1,68 +1,225 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 30px 16px;
-    color: #04eeff;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #04eeff;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+}
+
+.site-header {
+  background-color: #6328b1;
+  color: #fff;
+}
+
+.header-content {
+  width: min(100% - 40px, 1296px);
+  min-height: 94px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  color: inherit;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible,
+.brand:hover,
+.brand:focus-visible {
+  color: #cfe3ff;
+}
+
+main {
+  width: min(100% - 32px, 950px);
+  margin: 32px auto 40px;
 }
 
 .profile-card {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #6328b1;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(15, 39, 71, 0.12);
+  width: min(100%, 630px);
+  margin: 0 auto 24px;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: #6328b1;
+  box-shadow: 0 8px 24px rgba(15, 39, 71, 0.12);
+  scroll-margin-top: 20px;
+}
+
+.profile-pic {
+  display: block;
+  width: 158px;
+  height: 158px;
+  margin: 0 auto 24px;
+  border: 5px solid coral;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 h1 {
-    color: rgb(194, 58, 110);
-    text-align: center;
+  margin: 0 0 20px;
+  color: #04eeff;
+  font-size: 36px;
+  text-align: center;
 }
 
-
-
-.profile-card{
-    line-height: 1.8;
-}
-.profile-pic {
-    display: block;
-    margin: 0 auto 24px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid coral;
+.profile-details p {
+  margin: 12px 0;
 }
 
 .motto {
-    margin-top: 24px;
-    padding: 16px;
-    background-color: #fff;
-    border-left: 5px solid #a068ad;
-    border-radius: 8px;
+  margin-top: 24px;
+  padding: 24px 18px;
+  border-left: 5px solid #a068ad;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.motto h2 {
+  margin: 8px 0 16px;
+  font-size: 24px;
+}
+
+.motto p {
+  margin: 0;
 }
 
 button {
-    margin-top: 16px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    background-color: #b9b7dd;
-    color: #000000;
-    font-size: 16px;
-    cursor: pointer;
+  margin-top: 16px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #b9b7dd;
+  color: #000000;
+  font: inherit;
+  cursor: pointer;    
 }
 
 button:hover {
-    background-color: #c24dbc;
+  background-color: #c24dbc;
 }
 
-#message {
-    color: #852a39;
-    font-weight: bold;
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+#greetingMessage {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.content-card {
+  margin-top: 24px;
+  padding: 28px 30px;
+  border: 1px solid #d2ddeb;
+  border-radius: 18px;
+  background-color: #fff;
+  scroll-margin-top: 20px;
+}
+
+.content-card > h2 {
+  margin: 0 0 18px;
+  color: #2144b2;
+  font-size: 23px;
+}
+
+.skills-list {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.skills-list li {
+  margin: 8px 0;
+}
+
+.project {
+  padding: 20px;
+  border: 1px solid #c8dcff;
+  border-radius: 12px;
+  background-color: #eef5ff;
+}
+
+.project h3 {
+  margin: 0 0 12px;
+  color: #1d4ed8;
+  font-size: 20px;
+}
+
+.project p {
+  margin: 0;
+}
+
+.site-footer {
+  padding: 24px 16px;
+  background-color: #6e1bdb;
+  color: #fff;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    width: min(100% - 32px, 1296px);
+    min-height: auto;
+    padding: 18px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  .profile-card {
+    padding: 24px 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .content-card {
+    padding: 24px 20px;
+  }
 }
